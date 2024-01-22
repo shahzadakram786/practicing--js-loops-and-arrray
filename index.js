@@ -46,7 +46,7 @@ buttonprj1.addEventListener('click', () => {
 
     }
     console.log(num);
-    paraprj1.innerHTML += `Here is you Asending order: ${num}`
+    paraprj1.innerHTML = `Here is you Asending order: ${num}`
 
 
 
@@ -58,6 +58,9 @@ buttonprj1.addEventListener('click', () => {
 
 
 buttonprj2.addEventListener('click', () => {
+    // if (!isNaN(inputprj1) && !isNaN(inputprj2) && !isNaN(inputprj3) && !isNaN(inputprj4) && !isNaN(inputprj5)) {
+
+
     let num2 = [
         parseFloat(inputprj1.value),
         parseFloat(inputprj2.value),
@@ -65,21 +68,34 @@ buttonprj2.addEventListener('click', () => {
         parseFloat(inputprj4.value),
         parseFloat(inputprj5.value)
     ]
-    for (let i = 0; i < num2.length; i++) {
-        for (let j = 0; j < num2.length; j++) {
-            if (num2[j] < num2[j + 1]) {
-                let tempAsc = num2[j];
-                num2[j] = num2[j + 1];
-                num2[j + 1] = tempAsc;
+
+
+
+    // let num2 = [
+    //     (inputprj1.value),
+    //     (inputprj2.value),
+    //     (inputprj3.value),
+    //     (inputprj4.value),
+    //     (inputprj5.value)
+    // ]
+    if (!isNaN(num2.every(Element => !isNaN(Element)))) {
+        for (let i = 0; i < num2.length; i++) {
+            for (let j = 0; j < num2.length; j++) {
+                if (num2[j] < num2[j + 1]) {
+                    let tempAsc = num2[j];
+                    num2[j] = num2[j + 1];
+                    num2[j + 1] = tempAsc;
+
+                }
 
             }
 
         }
+        console.log(num2);
+        paraprj1.innerHTML = `Here is you Desending order: ${num2}`
+    } else if (isNaN(num2.every(Element => isNaN(Element)))) {
+        paraprj1.innerHTML += "you have entered wrong data type "
 
     }
-    console.log(num2);
-    paraprj1.innerHTML += `Here is you Desending order: ${num2}`
-
-
 
 });
