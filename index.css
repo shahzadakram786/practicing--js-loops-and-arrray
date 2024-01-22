@@ -10,12 +10,20 @@ hr {
 }
 
 .ascdes {
+    font-size: 15px;
     width: 10%;
     border: none;
+    border-radius: 5px;
     background-color: transparent;
+    cursor: 10px vertical-text white;
     border-bottom: 2px solid orange;
     text-shadow: 1px 1px 15px white;
     color: white;
+    transition: 0.9s ease-in-out;
+}
+
+.ascdes:hover {
+    background-color: rgb(41, 39, 39);
 }
 
 .prj1btn {
